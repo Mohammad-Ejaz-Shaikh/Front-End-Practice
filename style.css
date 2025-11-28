@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'poppins',sans-serif;
 }
 
 html {
@@ -16,6 +16,18 @@ body {
     background-position: center;
     color: white;
 }
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);  /* dark overlay */
+    z-index: -1;
+}
+
 
 .navbar {
     width: 100%;
@@ -196,3 +208,40 @@ body {
     font-size: 0.9rem;
 }
 
+.about h2, 
+.projects h2 {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+    .hero {
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        margin-left: 0;
+    }
+}
+
+@media (max-width:600px) {
+    .logo {
+        margin-left: 10px;
+    }
+    .All-Links {
+        margin-right: 10px;
+        gap: 10px;
+    }
+}
+.section {
+    margin-bottom: 50px;
+}
