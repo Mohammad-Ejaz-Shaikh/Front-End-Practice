@@ -126,7 +126,7 @@ body {
     text-align: center;
     font-size: 1.8rem;
     margin-bottom: 25px;
-    color: #fff;
+    color: black;
 }
 
 .projects-grid {
@@ -178,3 +178,19 @@ body {
     transform: translateY(-5px);
     box-shadow: 8px 16px rgba(0,0,0,0.4);
 }
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #fff;
+    background-color: rgba(0,0,0,0.6);
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
