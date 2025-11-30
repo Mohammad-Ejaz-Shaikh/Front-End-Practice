@@ -87,7 +87,14 @@
 </div>
 
 <footer class="footer">
-    © 2025 Ejaz Shaikh | Frontend Developer
+    <p>© 2025 Ejaz Shaikh • Frontend Developer</p>
 </footer>
+
+<script>
+window.addEventListener("scroll", () => {
+    document.querySelector(".navbar")
+        .classList.toggle("scrolled", window.scrollY > 5);
+});
+</script>
 </body>
 </html>
