@@ -201,8 +201,8 @@ body::before {
   padding: 20px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  transition: 0.3s;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transform: translateY(0) scale(1);
 }
 
 .project-card h3 {
@@ -237,9 +237,9 @@ body::before {
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0px 18px rgba(227, 87, 4, 0.4);
-  border-color: rgba(227, 87, 4, 0.7);
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 216, 179, 0.7);
 }
 
 .container {
@@ -258,18 +258,16 @@ body::before {
   letter-spacing: 0.5px;
   backdrop-filter: blur(5px);
   border-top: 1px solid rgba(255, 255, 255, 0.15);
-  animation: fadeUp 1.2s ease forwards;
+  animation: fadeInFooter 1.5s ease forwards;
   opacity: 0;
 }
 
-@keyframes fadeUp {
-  from {
+@keyframes fadeInFooter {
+  to {
     opacity: 0;
-    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -421,4 +419,11 @@ body::before {
 .scroll-fade.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+.All-Links a.active {
+  color: #ffd8b3;
+  font-weight: 600;
+  border-bottom: 2px solid #ffd8b3;
+  padding-bottom: 4px;
 }
