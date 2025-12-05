@@ -17,6 +17,7 @@
       <div class="All-Links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -86,6 +87,42 @@
               target="_blank"
               >View Code</a
             >
+          </div>
+        </div>
+      </section>
+
+      <section class="skills fade-in delay2" id="skills">
+        <h2>Skills</h2>
+        <p class="skills-intro">
+          I enjoy building clean, responsive interfaces and learning modern web
+          tools. These are the technologies I'm currently practicing and
+          improving.
+        </p>
+
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Frontend</h3>
+            <div class="skill-tags">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>Responsive Design</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Programming</h3>
+            <div class="skill-tags">
+              <span>JavaScript(Basics)</span>
+              <span>c(Academic)</span>
+              <span>Data Structures (Learning)</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Tools</h3>
+            <div class="skill-tags">
+              <span>Git & GitHub</span>
+              <span>VS Code</span>
+              <span>Figma (Basic)</span>
+            </div>
           </div>
         </div>
       </section>
@@ -174,24 +211,42 @@
             }
           });
         });
+        const targets = document.querySelectorAll(".fade-scroll");
+
+        function checkVisible() {
+          targets.forEach((el, index) => {
+            const rect = el.getBoundingClientRect();
+            if (
+              rect.top < window.innerHeight - 100 &&
+              !el.classList.contains("visible")
+            ) {
+              el.style.transitionDelay = `${index * 0.3}s`;
+              el.classList.add("visible");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", checkVisible);
+        checkVisible();
+        const skillGroups = document.querySelectorAll(".skill-group");
+
+        function checkSkills() {
+          skillGroups.forEach((el, index) => {
+            const rect = el.getBoundingClientRect();
+
+            if (
+              rect.top < window.innerHeight - 100 &&
+              !el.classList.contains("visible")
+            ) {
+              el.style.transitionDelay = `${index * 0.3}s`;
+              el.classList.add("visible");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", checkSkills);
+        window.addEventListener("load", checkSkills);
       });
-      const targets = document.querySelectorAll(".fade-scroll");
-
-      function checkVisible() {
-        targets.forEach((el, index) => {
-          const rect = el.getBoundingClientRect();
-          if (
-            rect.top < window.innerHeight - 100 &&
-            !el.classList.contains("visible")
-          ) {
-            el.style.transitionDelay = `${index * 0.3}s`;
-            el.classList.add("visible");
-          }
-        });
-      }
-
-      window.addEventListener("scroll", checkVisible);
-      checkVisible();
     </script>
   </body>
 </html>
