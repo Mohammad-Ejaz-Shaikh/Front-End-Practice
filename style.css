@@ -133,22 +133,23 @@ body::before {
 .btn {
   margin-top: 20px;
   padding: 12px 28px;
-  background-color: #e35704;
+  background: linear-gradient(135deg, #ff7a3c, #ffb347);
   border-radius: 30px;
   border: none;
-  color: #fff;
+  color: #141414;
   font-weight: 600;
   cursor: pointer;
-  border-top-right-radius: 1px;
-  transition: 0.3s;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+  border-top-right-radius: 8px;
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    border-top-right-radius 0.25s ease, background 0.2s ease, color 0.2s ease;
 }
 
 .btn:hover {
-  background-color: #ffffff;
-  color: #e35704;
+  background: linear-gradient(135deg, #ff30c2, #ffd1a0);
+  color: #c44b05;
   border-top-right-radius: 30px;
-  box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.5);
   transform: translateY(-2px);
 }
 
@@ -201,8 +202,8 @@ body::before {
   padding: 20px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  transform: translateY(0) scale(1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transform-style: preserve-3d;
 }
 
 .project-card h3 {
@@ -210,6 +211,7 @@ body::before {
   font-size: 1.2rem;
   margin-bottom: 10px;
   color: #fff;
+  text-shadow: 0 0 10px rgba(255, 216, 179, 0.4);
 }
 
 .project-card p {
@@ -234,12 +236,6 @@ body::before {
 .project-btn:hover {
   background-color: #fff;
   color: #e35704;
-}
-
-.project-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.6);
-  border-color: rgba(255, 216, 179, 0.7);
 }
 
 .container {
@@ -277,6 +273,35 @@ body::before {
   text-transform: uppercase;
 }
 
+.about h2,
+.projects h2,
+.skills h2,
+.contact h2 {
+  margin-bottom: 18px;
+  color: #ffffff;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0 0 12px rgba(255, 216, 179, 0.35);
+  position: relative;
+}
+
+.about h2::after,
+.projects h2::after,
+.skills h2::after,
+.contact h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -8px;
+  width: 60px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff7a3c, #ffd8b3);
+}
+
 @media (max-width: 600px) {
   .hero {
     text-align: center;
@@ -306,6 +331,11 @@ body::before {
     gap: 10px;
     font-size: 0.9rem;
   }
+}
+
+.project-card.fade-scroll.visible:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.4);
 }
 
 .section {
