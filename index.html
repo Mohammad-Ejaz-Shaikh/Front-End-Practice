@@ -6,6 +6,10 @@
     <title>Ejaz | Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
@@ -103,25 +107,31 @@
           <div class="skill-group">
             <h3>Frontend</h3>
             <div class="skill-tags">
-              <span>HTML5</span>
-              <span>CSS3</span>
-              <span>Responsive Design</span>
+              <span><i class="fa-brands fa-html5"></i>HTML5</span>
+              <span><i class="fa-brands fa-css3-alt"></i>CSS3</span>
+              <span
+                ><i class="fa-solid fa-mobile-screen-button"></i>Responsive
+                Design</span
+              >
             </div>
           </div>
           <div class="skill-group">
             <h3>Programming</h3>
             <div class="skill-tags">
-              <span>JavaScript(Basics)</span>
-              <span>c(Academic)</span>
-              <span>Data Structures (Learning)</span>
+              <span><i class="fa-brands fa-js"></i>JavaScript(Basics)</span>
+              <span><i class="fa-solid fa-code"></i>c(Academic)</span>
+              <span
+                ><i class="fa-solid fa-database"></i>Data Structures
+                (Learning)</span
+              >
             </div>
           </div>
           <div class="skill-group">
             <h3>Tools</h3>
             <div class="skill-tags">
-              <span>Git & GitHub</span>
-              <span>VS Code</span>
-              <span>Figma (Basic)</span>
+              <span><i class="fa-brands fa-git-alt"></i>Git & GitHub</span>
+              <span><i class="fa-solid fa-code"></i>VS Code</span>
+              <span><i class="fa-brands fa-figma"></i>Figma (Basic)</span>
             </div>
           </div>
         </div>
@@ -241,6 +251,10 @@
             ) {
               el.style.transitionDelay = `${index * 0.3}s`;
               el.classList.add("visible");
+
+              setTimeout(() => {
+                el.style.transitionDelay = "0s";
+              }, index * 300 + 400);
             }
           });
         }
