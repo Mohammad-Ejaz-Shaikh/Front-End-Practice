@@ -241,6 +241,7 @@
 
         window.addEventListener("scroll", checkVisible);
         checkVisible();
+
         const skillGroups = document.querySelectorAll(".skill-group");
 
         function checkSkills() {
@@ -251,7 +252,7 @@
               rect.top < window.innerHeight - 100 &&
               !el.classList.contains("visible")
             ) {
-              el.style.transitionDelay = `${index * 0.3}s`;
+              el.style.transitionDelay = `${index * 0.25}s`;
               el.classList.add("visible");
 
               setTimeout(() => {

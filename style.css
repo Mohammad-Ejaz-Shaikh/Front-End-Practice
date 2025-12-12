@@ -10,6 +10,7 @@ html {
 }
 
 body {
+  position: relative;
   min-height: 100vh;
   background-image: url("japan.jpg");
   background-size: cover;
@@ -20,12 +21,10 @@ body {
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.4); /* dark overlay */
-  z-index: -1;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .navbar {
@@ -154,8 +153,8 @@ body::before {
 }
 
 .btn:hover {
-  background: linear-gradient(135deg, #ff30c2, #ffd1a0);
-  color: #c44b05;
+  background: linear-gradient(135deg, #ff9441, #ffd8b3);
+  color: #8b2f00;
   border-top-right-radius: 30px;
   box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.5);
   transform: translateY(-2px);
@@ -267,7 +266,7 @@ body::before {
 }
 
 @keyframes fadeInFooter {
-  to {
+  from {
     opacity: 0;
   }
   to {
@@ -394,12 +393,34 @@ body::before {
   padding: 25px;
   max-width: 600px;
   text-align: center;
+  position: relative;
+  padding-top: 60px;
+  z-index: 2;
+}
+
+.contact::before {
+  content: "";
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 122, 60, 0.95),
+    rgba(255, 216, 179, 0.85)
+  );
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  border-radius: 999px;
 }
 
 .contact h2 {
   margin-bottom: 20px;
   color: #fff;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px rgba(255, 216, 179, 0.4);
   letter-spacing: 1px;
 }
 
@@ -411,6 +432,12 @@ body::before {
 
 .contact-box {
   margin-top: 20px;
+  padding: 25px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(6px);
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.08);
 }
 
 .social-links {
@@ -446,6 +473,17 @@ body::before {
 .gmail-btn:hover {
   background-color: #fff;
   color: #e35704;
+}
+
+.gmail-btn,
+.social-links a {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.gmail-btn:hover,
+.social-links a:hover {
+  color: #ffd8b3;
+  text-shadow: 0 0 10px rgba(255, 216, 179, 0.6);
 }
 
 .scroll-fade {
@@ -517,7 +555,7 @@ body::before {
   border: 1px solid rgba(255, 255, 255, 0.15);
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.3s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.3s ease;
 }
 
 .skill-group.visible {
@@ -528,7 +566,6 @@ body::before {
 .skill-group.visible:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .skill-group h3 {
